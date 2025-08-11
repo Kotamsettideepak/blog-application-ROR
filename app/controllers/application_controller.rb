@@ -9,12 +9,12 @@ class ApplicationController < ActionController::Base
 
   def loggedin?
     if current_user
-      return true
+      true
     else
-      return false
+      false
     end
   end
-  
+
   def required_login
     unless loggedin?
       flash[:notice] = "require login"

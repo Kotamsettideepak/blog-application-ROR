@@ -69,6 +69,6 @@ gem "base64", "~> 0.3.0"
 
 gem "bcrypt", "~> 3.1.7"
 
-gem "dotenv-rails", groups: [:development, :test]
+gem "dotenv-rails", groups: [ :development, :test ]
 
-gem 'pundit'
+gem "pundit"
