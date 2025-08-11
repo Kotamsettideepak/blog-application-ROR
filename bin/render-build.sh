@@ -4,5 +4,12 @@ set -o errexit
 bundle install
 bundle exec rake assets:precompile
 bundle exec rake assets:clean
-bundle exec rake db:migrate
-    
+
+# Check if database exists
+if bundle exec rake db:version; then
+  echo "Running migrations..."
+  bundle exec rake db:migrate
+else
+  echo "Setting up database..."
+  bundle exec rake db:setup
+fi
