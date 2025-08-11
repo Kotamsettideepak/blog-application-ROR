@@ -1,0 +1,2 @@
+module CommnetHelper
+end

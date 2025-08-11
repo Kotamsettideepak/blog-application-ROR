@@ -1,0 +1,87 @@
+<h1><%= @blog.title %></h1>
+
+<% if flash[:notice] %>
+  <div style="color: red;" class="alert alert-info">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
+<p class="meta">
+  By <%= @blog.user.name %> • 
+  <%= @blog.created_at.strftime("%B %d, %Y") %>
+</p>
+
+<hr>
+
+<h3>Excerpt</h3>
+<p><%= @blog.excerpt %></p>
+
+<h3>Content</h3>
+<div class="blog-content">
+  <%= simple_format(@blog.content) %>
+</div>
+
+<hr>
+
+<h3>Tags</h3>
+<p>
+  <% if @blog.tags.any? %>
+    <% @blog.tags.each do |tag| %>
+      <span style="background-color: #007bff; color: white; padding: 4px 8px; border-radius: 4px; margin-right: 6px; font-size: 0.9rem;">
+        <%= tag.name %>
+      </span>
+    <% end %>
+  <% else %>
+    <em>No tags assigned</em>
+  <% end %>
+</p>
+
+<hr>
+
+<h3>Comments</h3>
+
+<% if @blog.comments.any? %>
+  <ul>
+    <% @blog.comments.each do |comment| %>
+      <li>
+        <strong><%= comment.name %></strong> said:
+        <p><%= simple_format(comment.content) %></p>
+        <small><%= comment.created_at.strftime("%b %d, %Y at %I:%M %p") %></small>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No comments yet. Be the first to comment!</p>
+<% end %>
+
+<hr>
+
+<h3>Add Comment</h3>
+
+<%= form_with(model: [@blog, Comment.new], local: true) do |f| %>
+  <div>
+    <%= f.label :name, "Your Name" %><br>
+    <%= f.text_field :name, required: true %>
+  </div>
+  <div>
+    <%= f.label :email, "Your Email" %><br>
+    <%= f.email_field :email, required: true %>
+  </div>
+  <div>
+    <%= f.label :content, "Your Comment" %><br>
+    <%= f.text_area :content, rows: 4, required: true %>
+  </div>
+
+  <div style="margin-top: 10px;">
+    <%= f.submit "Post Comment", class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+<hr>
+
+<%= link_to "Edit", edit_blog_path(@blog), class: "btn btn-primary" %> |
+<%= link_to "Back to Blogs", blogs_path, class: "btn btn-secondary" %> |
+
+<%= button_to "Delete", blog_path(@blog), method: :delete,
+      data: { confirm: "Are you sure you want to delete this blog?" },
+      class: "btn btn-danger" %>

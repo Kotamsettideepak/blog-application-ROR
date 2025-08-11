@@ -1,0 +1,38 @@
+<h1>Edit Blog</h1>
+
+<% if flash[:notice] %>
+  <p style="color: red; font-weight: bold;"><%= flash[:notice] %></p>
+<% end %>
+
+<%= form_with(model: @blog, local: true) do |form| %>
+  <% if @blog.errors.any? %>
+    <div style="color: red;">
+      <h2><%= pluralize(@blog.errors.count, "error") %> prohibited this blog from being saved:</h2>
+      <ul>
+        <% @blog.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title %><br>
+    <%= form.text_field :title, required: true %>
+  </div>
+
+  <div>
+    <%= form.label :excerpt %><br>
+    <%= form.text_field :excerpt %>
+  </div>
+
+  <div>
+    <%= form.label :content %><br>
+    <%= form.text_area :content, rows: 6 %>
+  </div>
+
+  <div>
+    <%= form.submit "Update Blog", class: "btn btn-primary" %>
+    <%= link_to "Cancel", @blog, class: "btn btn-secondary" %>
+  </div>
+<% end %>

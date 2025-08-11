@@ -1,0 +1,372 @@
+--[ Route 1 ]------------------------------------------------------------------------------
+Prefix            | 
+Verb              | 
+URI               | /assets
+Controller#Action | Propshaft::Server
+Source Location   | propshaft (1.2.1) lib/propshaft/railtie.rb:49
+--[ Route 2 ]------------------------------------------------------------------------------
+Prefix            | blog_comments
+Verb              | POST
+URI               | /blogs/:blog_id/comments(.:format)
+Controller#Action | comments#create
+Source Location   | /home/deepak/blog-application/config/routes.rb:3
+--[ Route 3 ]------------------------------------------------------------------------------
+Prefix            | blog_comment
+Verb              | PATCH
+URI               | /blogs/:blog_id/comments/:id(.:format)
+Controller#Action | comments#update
+Source Location   | /home/deepak/blog-application/config/routes.rb:3
+--[ Route 4 ]------------------------------------------------------------------------------
+Prefix            | 
+Verb              | PUT
+URI               | /blogs/:blog_id/comments/:id(.:format)
+Controller#Action | comments#update
+Source Location   | /home/deepak/blog-application/config/routes.rb:3
+--[ Route 5 ]------------------------------------------------------------------------------
+Prefix            | 
+Verb              | DELETE
+URI               | /blogs/:blog_id/comments/:id(.:format)
+Controller#Action | comments#destroy
+Source Location   | /home/deepak/blog-application/config/routes.rb:3
+--[ Route 6 ]------------------------------------------------------------------------------
+Prefix            | blogs
+Verb              | GET
+URI               | /blogs(.:format)
+Controller#Action | blogs#index
+Source Location   | /home/deepak/blog-application/config/routes.rb:2
+--[ Route 7 ]------------------------------------------------------------------------------
+Prefix            | 
+Verb              | POST
+URI               | /blogs(.:format)
+Controller#Action | blogs#create
+Source Location   | /home/deepak/blog-application/config/routes.rb:2
+--[ Route 8 ]------------------------------------------------------------------------------
+Prefix            | new_blog
+Verb              | GET
+URI               | /blogs/new(.:format)
+Controller#Action | blogs#new
+Source Location   | /home/deepak/blog-application/config/routes.rb:2
+--[ Route 9 ]------------------------------------------------------------------------------
+Prefix            | edit_blog
+Verb              | GET
+URI               | /blogs/:id/edit(.:format)
+Controller#Action | blogs#edit
+Source Location   | /home/deepak/blog-application/config/routes.rb:2
+--[ Route 10 ]-----------------------------------------------------------------------------
+Prefix            | blog
+Verb              | GET
+URI               | /blogs/:id(.:format)
+Controller#Action | blogs#show
+Source Location   | /home/deepak/blog-application/config/routes.rb:2
+--[ Route 11 ]-----------------------------------------------------------------------------
+Prefix            | 
+Verb              | PATCH
+URI               | /blogs/:id(.:format)
+Controller#Action | blogs#update
+Source Location   | /home/deepak/blog-application/config/routes.rb:2
+--[ Route 12 ]-----------------------------------------------------------------------------
+Prefix            | 
+Verb              | PUT
+URI               | /blogs/:id(.:format)
+Controller#Action | blogs#update
+Source Location   | /home/deepak/blog-application/config/routes.rb:2
+--[ Route 13 ]-----------------------------------------------------------------------------
+Prefix            | 
+Verb              | DELETE
+URI               | /blogs/:id(.:format)
+Controller#Action | blogs#destroy
+Source Location   | /home/deepak/blog-application/config/routes.rb:2
+--[ Route 14 ]-----------------------------------------------------------------------------
+Prefix            | users
+Verb              | GET
+URI               | /users(.:format)
+Controller#Action | users#index
+Source Location   | /home/deepak/blog-application/config/routes.rb:6
+--[ Route 15 ]-----------------------------------------------------------------------------
+Prefix            | 
+Verb              | POST
+URI               | /users(.:format)
+Controller#Action | users#create
+Source Location   | /home/deepak/blog-application/config/routes.rb:6
+--[ Route 16 ]-----------------------------------------------------------------------------
+Prefix            | new_user
+Verb              | GET
+URI               | /users/new(.:format)
+Controller#Action | users#new
+Source Location   | /home/deepak/blog-application/config/routes.rb:6
+--[ Route 17 ]-----------------------------------------------------------------------------
+Prefix            | edit_user
+Verb              | GET
+URI               | /users/:id/edit(.:format)
+Controller#Action | users#edit
+Source Location   | /home/deepak/blog-application/config/routes.rb:6
+--[ Route 18 ]-----------------------------------------------------------------------------
+Prefix            | user
+Verb              | GET
+URI               | /users/:id(.:format)
+Controller#Action | users#show
+Source Location   | /home/deepak/blog-application/config/routes.rb:6
+--[ Route 19 ]-----------------------------------------------------------------------------
+Prefix            | 
+Verb              | PATCH
+URI               | /users/:id(.:format)
+Controller#Action | users#update
+Source Location   | /home/deepak/blog-application/config/routes.rb:6
+--[ Route 20 ]-----------------------------------------------------------------------------
+Prefix            | 
+Verb              | PUT
+URI               | /users/:id(.:format)
+Controller#Action | users#update
+Source Location   | /home/deepak/blog-application/config/routes.rb:6
+--[ Route 21 ]-----------------------------------------------------------------------------
+Prefix            | 
+Verb              | DELETE
+URI               | /users/:id(.:format)
+Controller#Action | users#destroy
+Source Location   | /home/deepak/blog-application/config/routes.rb:6
+--[ Route 22 ]-----------------------------------------------------------------------------
+Prefix            | comments
+Verb              | GET
+URI               | /comments(.:format)
+Controller#Action | comments#index
+Source Location   | /home/deepak/blog-application/config/routes.rb:8
+--[ Route 23 ]-----------------------------------------------------------------------------
+Prefix            | 
+Verb              | POST
+URI               | /comments(.:format)
+Controller#Action | comments#create
+Source Location   | /home/deepak/blog-application/config/routes.rb:8
+--[ Route 24 ]-----------------------------------------------------------------------------
+Prefix            | new_comment
+Verb              | GET
+URI               | /comments/new(.:format)
+Controller#Action | comments#new
+Source Location   | /home/deepak/blog-application/config/routes.rb:8
+--[ Route 25 ]-----------------------------------------------------------------------------
+Prefix            | edit_comment
+Verb              | GET
+URI               | /comments/:id/edit(.:format)
+Controller#Action | comments#edit
+Source Location   | /home/deepak/blog-application/config/routes.rb:8
+--[ Route 26 ]-----------------------------------------------------------------------------
+Prefix            | comment
+Verb              | GET
+URI               | /comments/:id(.:format)
+Controller#Action | comments#show
+Source Location   | /home/deepak/blog-application/config/routes.rb:8
+--[ Route 27 ]-----------------------------------------------------------------------------
+Prefix            | 
+Verb              | PATCH
+URI               | /comments/:id(.:format)
+Controller#Action | comments#update
+Source Location   | /home/deepak/blog-application/config/routes.rb:8
+--[ Route 28 ]-----------------------------------------------------------------------------
+Prefix            | 
+Verb              | PUT
+URI               | /comments/:id(.:format)
+Controller#Action | comments#update
+Source Location   | /home/deepak/blog-application/config/routes.rb:8
+--[ Route 29 ]-----------------------------------------------------------------------------
+Prefix            | 
+Verb              | DELETE
+URI               | /comments/:id(.:format)
+Controller#Action | comments#destroy
+Source Location   | /home/deepak/blog-application/config/routes.rb:8
+--[ Route 30 ]-----------------------------------------------------------------------------
+Prefix            | root
+Verb              | GET
+URI               | /
+Controller#Action | blogs#index
+Source Location   | /home/deepak/blog-application/config/routes.rb:10
+--[ Route 31 ]-----------------------------------------------------------------------------
+Prefix            | destroy
+Verb              | POST
+URI               | /destroy(.:format)
+Controller#Action | blogs#destroy
+Source Location   | /home/deepak/blog-application/config/routes.rb:12
+--[ Route 32 ]-----------------------------------------------------------------------------
+Prefix            | login
+Verb              | GET
+URI               | /login(.:format)
+Controller#Action | sessions#new
+Source Location   | /home/deepak/blog-application/config/routes.rb:14
+--[ Route 33 ]-----------------------------------------------------------------------------
+Prefix            | 
+Verb              | POST
+URI               | /login(.:format)
+Controller#Action | sessions#create
+Source Location   | /home/deepak/blog-application/config/routes.rb:15
+--[ Route 34 ]-----------------------------------------------------------------------------
+Prefix            | logout
+Verb              | POST
+URI               | /logout(.:format)
+Controller#Action | sessions#destroy
+Source Location   | /home/deepak/blog-application/config/routes.rb:16
+--[ Route 35 ]-----------------------------------------------------------------------------
+Prefix            | register
+Verb              | GET
+URI               | /register(.:format)
+Controller#Action | users#new
+Source Location   | /home/deepak/blog-application/config/routes.rb:18
+--[ Route 36 ]-----------------------------------------------------------------------------
+Prefix            | 
+Verb              | POST
+URI               | /register(.:format)
+Controller#Action | users#create
+Source Location   | /home/deepak/blog-application/config/routes.rb:19
+--[ Route 37 ]-----------------------------------------------------------------------------
+Prefix            | turbo_recede_historical_location
+Verb              | GET
+URI               | /recede_historical_location(.:format)
+Controller#Action | turbo/native/navigation#recede
+Source Location   | turbo-rails (2.0.16) config/routes.rb:2
+--[ Route 38 ]-----------------------------------------------------------------------------
+Prefix            | turbo_resume_historical_location
+Verb              | GET
+URI               | /resume_historical_location(.:format)
+Controller#Action | turbo/native/navigation#resume
+Source Location   | turbo-rails (2.0.16) config/routes.rb:3
+--[ Route 39 ]-----------------------------------------------------------------------------
+Prefix            | turbo_refresh_historical_location
+Verb              | GET
+URI               | /refresh_historical_location(.:format)
+Controller#Action | turbo/native/navigation#refresh
+Source Location   | turbo-rails (2.0.16) config/routes.rb:4
+--[ Route 40 ]-----------------------------------------------------------------------------
+Prefix            | rails_postmark_inbound_emails
+Verb              | POST
+URI               | /rails/action_mailbox/postmark/inbound_emails(.:format)
+Controller#Action | action_mailbox/ingresses/postmark/inbound_emails#create
+Source Location   | actionmailbox (8.0.2) config/routes.rb:5
+--[ Route 41 ]-----------------------------------------------------------------------------
+Prefix            | rails_relay_inbound_emails
+Verb              | POST
+URI               | /rails/action_mailbox/relay/inbound_emails(.:format)
+Controller#Action | action_mailbox/ingresses/relay/inbound_emails#create
+Source Location   | actionmailbox (8.0.2) config/routes.rb:6
+--[ Route 42 ]-----------------------------------------------------------------------------
+Prefix            | rails_sendgrid_inbound_emails
+Verb              | POST
+URI               | /rails/action_mailbox/sendgrid/inbound_emails(.:format)
+Controller#Action | action_mailbox/ingresses/sendgrid/inbound_emails#create
+Source Location   | actionmailbox (8.0.2) config/routes.rb:7
+--[ Route 43 ]-----------------------------------------------------------------------------
+Prefix            | rails_mandrill_inbound_health_check
+Verb              | GET
+URI               | /rails/action_mailbox/mandrill/inbound_emails(.:format)
+Controller#Action | action_mailbox/ingresses/mandrill/inbound_emails#health_check
+Source Location   | actionmailbox (8.0.2) config/routes.rb:10
+--[ Route 44 ]-----------------------------------------------------------------------------
+Prefix            | rails_mandrill_inbound_emails
+Verb              | POST
+URI               | /rails/action_mailbox/mandrill/inbound_emails(.:format)
+Controller#Action | action_mailbox/ingresses/mandrill/inbound_emails#create
+Source Location   | actionmailbox (8.0.2) config/routes.rb:11
+--[ Route 45 ]-----------------------------------------------------------------------------
+Prefix            | rails_mailgun_inbound_emails
+Verb              | POST
+URI               | /rails/action_mailbox/mailgun/inbound_emails/mime(.:format)
+Controller#Action | action_mailbox/ingresses/mailgun/inbound_emails#create
+Source Location   | actionmailbox (8.0.2) config/routes.rb:14
+--[ Route 46 ]-----------------------------------------------------------------------------
+Prefix            | rails_conductor_inbound_emails
+Verb              | GET
+URI               | /rails/conductor/action_mailbox/inbound_emails(.:format)
+Controller#Action | rails/conductor/action_mailbox/inbound_emails#index
+Source Location   | actionmailbox (8.0.2) config/routes.rb:19
+--[ Route 47 ]-----------------------------------------------------------------------------
+Prefix            | 
+Verb              | POST
+URI               | /rails/conductor/action_mailbox/inbound_emails(.:format)
+Controller#Action | rails/conductor/action_mailbox/inbound_emails#create
+Source Location   | actionmailbox (8.0.2) config/routes.rb:19
+--[ Route 48 ]-----------------------------------------------------------------------------
+Prefix            | new_rails_conductor_inbound_email
+Verb              | GET
+URI               | /rails/conductor/action_mailbox/inbound_emails/new(.:format)
+Controller#Action | rails/conductor/action_mailbox/inbound_emails#new
+Source Location   | actionmailbox (8.0.2) config/routes.rb:19
+--[ Route 49 ]-----------------------------------------------------------------------------
+Prefix            | rails_conductor_inbound_email
+Verb              | GET
+URI               | /rails/conductor/action_mailbox/inbound_emails/:id(.:format)
+Controller#Action | rails/conductor/action_mailbox/inbound_emails#show
+Source Location   | actionmailbox (8.0.2) config/routes.rb:19
+--[ Route 50 ]-----------------------------------------------------------------------------
+Prefix            | new_rails_conductor_inbound_email_source
+Verb              | GET
+URI               | /rails/conductor/action_mailbox/inbound_emails/sources/new(.:format)
+Controller#Action | rails/conductor/action_mailbox/inbound_emails/sources#new
+Source Location   | actionmailbox (8.0.2) config/routes.rb:20
+--[ Route 51 ]-----------------------------------------------------------------------------
+Prefix            | rails_conductor_inbound_email_sources
+Verb              | POST
+URI               | /rails/conductor/action_mailbox/inbound_emails/sources(.:format)
+Controller#Action | rails/conductor/action_mailbox/inbound_emails/sources#create
+Source Location   | actionmailbox (8.0.2) config/routes.rb:21
+--[ Route 52 ]-----------------------------------------------------------------------------
+Prefix            | rails_conductor_inbound_email_reroute
+Verb              | POST
+URI               | /rails/conductor/action_mailbox/:inbound_email_id/reroute(.:format)
+Controller#Action | rails/conductor/action_mailbox/reroutes#create
+Source Location   | actionmailbox (8.0.2) config/routes.rb:23
+--[ Route 53 ]-----------------------------------------------------------------------------
+Prefix            | rails_conductor_inbound_email_incinerate
+Verb              | POST
+URI               | /rails/conductor/action_mailbox/:inbound_email_id/incinerate(.:format)
+Controller#Action | rails/conductor/action_mailbox/incinerates#create
+Source Location   | actionmailbox (8.0.2) config/routes.rb:24
+--[ Route 54 ]-----------------------------------------------------------------------------
+Prefix            | rails_service_blob
+Verb              | GET
+URI               | /rails/active_storage/blobs/redirect/:signed_id/*filename(.:format)
+Controller#Action | active_storage/blobs/redirect#show
+Source Location   | activestorage (8.0.2) config/routes.rb:5
+--[ Route 55 ]-----------------------------------------------------------------------------
+Prefix            | rails_service_blob_proxy
+Verb              | GET
+URI               | /rails/active_storage/blobs/proxy/:signed_id/*filename(.:format)
+Controller#Action | active_storage/blobs/proxy#show
+Source Location   | activestorage (8.0.2) config/routes.rb:6
+--[ Route 56 ]-----------------------------------------------------------------------------
+Prefix            | 
+Verb              | GET
+URI               | /rails/active_storage/blobs/:signed_id/*filename(.:format)
+Controller#Action | active_storage/blobs/redirect#show
+Source Location   | activestorage (8.0.2) config/routes.rb:7
+--[ Route 57 ]-----------------------------------------------------------------------------
+Prefix            | rails_blob_representation
+Verb              | GET
+URI               | /rails/active_storage/representations/redirect/:signed_blob_id/:variation_key/*filename(.:format)
+Controller#Action | active_storage/representations/redirect#show
+Source Location   | activestorage (8.0.2) config/routes.rb:9
+--[ Route 58 ]-----------------------------------------------------------------------------
+Prefix            | rails_blob_representation_proxy
+Verb              | GET
+URI               | /rails/active_storage/representations/proxy/:signed_blob_id/:variation_key/*filename(.:format)
+Controller#Action | active_storage/representations/proxy#show
+Source Location   | activestorage (8.0.2) config/routes.rb:10
+--[ Route 59 ]-----------------------------------------------------------------------------
+Prefix            | 
+Verb              | GET
+URI               | /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format)
+Controller#Action | active_storage/representations/redirect#show
+Source Location   | activestorage (8.0.2) config/routes.rb:11
+--[ Route 60 ]-----------------------------------------------------------------------------
+Prefix            | rails_disk_service
+Verb              | GET
+URI               | /rails/active_storage/disk/:encoded_key/*filename(.:format)
+Controller#Action | active_storage/disk#show
+Source Location   | activestorage (8.0.2) config/routes.rb:13
+--[ Route 61 ]-----------------------------------------------------------------------------
+Prefix            | update_rails_disk_service
+Verb              | PUT
+URI               | /rails/active_storage/disk/:encoded_token(.:format)
+Controller#Action | active_storage/disk#update
+Source Location   | activestorage (8.0.2) config/routes.rb:14
+--[ Route 62 ]-----------------------------------------------------------------------------
+Prefix            | rails_direct_uploads
+Verb              | POST
+URI               | /rails/active_storage/direct_uploads(.:format)
+Controller#Action | active_storage/direct_uploads#create
+Source Location   | activestorage (8.0.2) config/routes.rb:15

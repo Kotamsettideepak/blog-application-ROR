@@ -1,0 +1,259 @@
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9fafb;
+    color: #333;
+    margin: 20px;
+  }
+
+  h1 {
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 25px;
+  }
+
+  .btn {
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    user-select: none;
+  }
+
+  .btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+
+  .btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  .btn-danger:hover {
+    background-color: #a71d2a;
+  }
+
+  .top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+  }
+
+  .logout-btn {
+    margin-left: auto;
+  }
+
+  /* Layout */
+  .main-content {
+    display: flex;
+    gap: 30px;
+  }
+
+  /* Sidebar styles */
+  .sidebar {
+    width: 280px;
+    background-color: white;
+    padding: 20px 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+    flex-shrink: 0;
+  }
+
+  .filter-title {
+    font-weight: 700;
+    font-size: 17px;
+    margin-bottom: 12px;
+    color: #444;
+  }
+
+  .search-input {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 15px;
+    border: 1.8px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+    margin-bottom: 20px;
+  }
+  .search-input:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+
+  .filters {
+    max-height: 180px;
+    overflow-y: auto;
+    padding-right: 10px;
+    border: 1.5px solid #eee;
+    border-radius: 8px;
+    background-color: #fafafa;
+    margin-bottom: 20px;
+  }
+  .filters label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    color: #555;
+  }
+  .filters input[type="checkbox"] {
+    margin-right: 10px;
+    width: 17px;
+    height: 17px;
+  }
+
+  .search-btn {
+    width: 100%;
+    padding: 10px 22px;
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 8px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .search-btn:hover {
+    background-color: #0056b3;
+  }
+
+  /* Blogs area */
+  .posts-container {
+    flex-grow: 1;
+  }
+
+  .posts-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(280px,1fr));
+    gap: 20px;
+  }
+
+  /* Pagination */
+  .pagination {
+    margin-top: 30px;
+    text-align: center;
+  }
+  .pagination a, .pagination span {
+    display: inline-block;
+    padding: 8px 14px;
+    margin: 0 6px;
+    border: 1.5px solid #ddd;
+    color: #007bff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+  }
+  .pagination a:hover {
+    background-color: #007bff;
+    color: white;
+  }
+  .pagination .current-page {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+  }
+  .pagination .disabled {
+    color: #aaa;
+    border-color: #eee;
+  }
+</style>
+
+<div class="top-bar">
+  <h1>All Blogs</h1>
+  <div class="logout-btn">
+    <%= button_to "Logout", logout_path, method: :post, class: "btn btn-danger" %>
+  </div>
+</div>
+
+<div style="margin-bottom: 20px;">
+  <%= link_to "New Blog", new_blog_path, class: "btn btn-primary" %>
+</div>
+
+<div class="main-content">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <%= form_with url: blogs_path, method: :get, local: true do |form| %>
+      <!-- Search -->
+      <div class="filter-title">Search</div>
+      <%= form.text_field :search, value: params[:search], placeholder: "Search blogs...", class: "search-input" %>
+
+      <!-- Authors -->
+      <div class="filter-title">Authors</div>
+      <div class="filters">
+        <% @all_authors.each do |author_name| %>
+          <label>
+            <%= check_box_tag "authors[]", author_name, (params[:authors] || []).include?(author_name) %>
+            <%= author_name %>
+          </label>
+        <% end %>
+      </div>
+
+      <!-- Tags -->
+      <div class="filter-title">Tags</div>
+      <div class="filters">
+        <% @all_tags.each do |tag_name| %>
+          <label>
+            <%= check_box_tag "tags[]", tag_name, (params[:tags] || []).include?(tag_name) %>
+            <%= tag_name %>
+          </label>
+        <% end %>
+      </div>
+
+      <%= form.submit "Apply Filters", class: "search-btn" %>
+    <% end %>
+  </div>
+
+  <!-- Blogs list -->
+  <div class="posts-container">
+    <div class="posts-list">
+      <%= render partial: "blog_card", collection: @blogs, as: :blog %>
+    </div>
+
+    <!-- Pagination -->
+    <% current_page = params[:page].to_i > 0 ? params[:page].to_i : 1 %>
+    <% limit = params[:limit].to_i > 0 ? params[:limit].to_i : 5 %>
+    <% total_pages = (@total_blogs.to_f / limit).ceil %>
+
+    <% base_params = {
+      limit: limit,
+      search: params[:search],
+      authors: params[:authors],
+      tags: params[:tags]
+    } %>
+
+    <div class="pagination">
+      <% if current_page > 1 %>
+        <%= link_to "Previous", blogs_path(base_params.merge(page: current_page - 1)) %>
+      <% else %>
+        <span class="disabled">Previous</span>
+      <% end %>
+
+      <% (1..total_pages).each do |page| %>
+        <% if page == current_page %>
+          <span class="current-page"><%= page %></span>
+        <% else %>
+          <%= link_to page, blogs_path(base_params.merge(page: page)) %>
+        <% end %>
+      <% end %>
+
+      <% if current_page < total_pages %>
+        <%= link_to "Next", blogs_path(base_params.merge(page: current_page + 1)) %>
+      <% else %>
+        <span class="disabled">Next</span>
+      <% end %>
+    </div>
+  </div>
+</div>

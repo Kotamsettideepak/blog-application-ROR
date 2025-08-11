@@ -1,0 +1,7 @@
+<div class="post-card">
+  <h2><%= link_to blog.title, blog_path(blog) %></h2>
+  <p><%= blog.excerpt %></p>
+  <p class="meta">
+    By <%= blog.user.name %> • <%= blog.created_at.strftime("%B %d, %Y") %>
+  </p>
+</div>
