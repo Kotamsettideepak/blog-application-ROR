@@ -84,7 +84,6 @@ Rails.application.configure do
     authentication:       "plain",
     enable_starttls_auto: true
   }
-  
   config.action_mailer.default_url_options = { host: ENV["APP_HOST"], protocol: "https" }
   
 end
