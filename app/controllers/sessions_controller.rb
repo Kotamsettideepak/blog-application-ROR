@@ -8,6 +8,8 @@ class SessionsController < ApplicationController
 
     if user and user.authenticate(params[:password])
       session[:user_id] = user.id
+      session[:user_agent] = request.user_agent
+      session[:ip_address] = request.remote_ip
       puts "SESSION CREATED>>>>>>>>>>"
       redirect_to root_path
     else

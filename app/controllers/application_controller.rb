@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  protect_from_forgery with: :exception
   include Pundit
 
   helper_attr :current_user
@@ -18,6 +19,14 @@ class ApplicationController < ActionController::Base
   def required_login
     unless loggedin?
       flash[:notice] = "require login"
+      redirect_to login_path
+    end
+  end
+
+  def valid_user?
+    if session[:user_id] && session[:user_agent] != request.user_agent
+      reset_session
+      flash[:alert] = "Session mismatch detected. Please log in again."
       redirect_to login_path
     end
   end

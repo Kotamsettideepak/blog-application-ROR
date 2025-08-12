@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   resources :comments
 
+  get "/csrf-token", to: "csrf_token#show"
+
   root "blogs#index"
 
   post "/destroy", to: "blogs#destroy"

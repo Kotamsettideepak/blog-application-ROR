@@ -72,3 +72,5 @@ gem "bcrypt", "~> 3.1.7"
 gem "dotenv-rails", groups: [ :development, :test ]
 
 gem "pundit"
+
+gem "jwt"

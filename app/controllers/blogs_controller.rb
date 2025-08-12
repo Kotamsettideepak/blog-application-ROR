@@ -1,5 +1,6 @@
 class BlogsController < ApplicationController
   before_action :required_login, only: [ :create, :update, :destroy ]
+
   def index
     @all_tags = Tag.pluck(:name)
     @all_authors = User.pluck(:name)

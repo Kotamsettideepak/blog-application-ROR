@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: [ :create ]
   def new
     @user = User.new
   end
@@ -20,7 +21,6 @@ class UsersController < ApplicationController
       end
     end
   end
-
 
   private
   def user_params
